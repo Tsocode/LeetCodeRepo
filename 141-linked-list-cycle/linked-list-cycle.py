@@ -6,12 +6,13 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        slow, fast = head, head #initialize the position for the slow and fast pointers
-        while fast and fast.next != None: #if the fast pointer reaches end of linkedlist
-            slow = slow.next #move the slow node interval of 1
-            fast = fast.next.next #move the fast node interval of 2
-            if slow == fast: #when slow = fast then a cycle
-                return True #show that it is a cycle
-        return False #not a cycle
+        slow, fast = head, head # initialize the head of the node
+        #hare and tortoise algorithm
+        while fast and fast.next != None:
+            slow = slow.next
+            fast = fast.next.next
 
+            if fast == slow:
+                return True
+        return False
         
