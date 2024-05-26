@@ -16,7 +16,7 @@ class Solution:
             # print(left, right, root.val)
             diameter = max(diameter,left + right)
             return max(left, right)
-        solver(root)
+        solver(root) #function call
         return diameter
             
             
