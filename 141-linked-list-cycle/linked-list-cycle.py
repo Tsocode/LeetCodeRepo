@@ -6,16 +6,14 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        s = head
-        f = head
+        s = head #set the slow pointer to head of node
+        f = head #set the fast pointer to head of node
 
-        #if s or f == None:
-        #    return False
-        while f and f.next:
-            s = s.next
-            f = f.next.next
-            if s == f:
+        while f and f.next: # ensure that f is not NONE and that f.next exists to not get NonetypeError
+            s = s.next #next step the slow pointer takes
+            f = f.next.next #next two steps that the fast pointer takes
+            if s == f: #check when they are equal (cyclical linkedlist)
                 return True
-        return False
+        return False #else non-cyclical: FALSE
 
         
